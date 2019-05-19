@@ -47,6 +47,21 @@ header {
     border-bottom: thin solid #fd3333;
 }
 
+.tip {
+    color: #191919;
+    background-color: #ADAFB2;
+    padding: 12px;
+    width: fit-content;
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 20px 60px 10px;
+}
+
+.tip i {
+    font-size: 1.4rem;
+    padding: 10px;
+}
+
 .cars-container {
     display: flex;
     flex-flow: row wrap;
@@ -57,22 +72,28 @@ header {
 }
 
 .car-item {
-    display: flex;
-    flex-flow: column;
+    position: relative;
     margin: 12px;
 }
 
 .car-item img {
     position: relative;
-    width: 600px;
+    width: 550px;
     max-width: 80vw;
-    border-radius: 5px;
-    margin: 10px 0px;
+
     transition: transform 0.3s;
 }
 
+.car-description {
+    display: flex;
+    flex-flow: column;
+    position: absolute;
+    bottom: 15px;
+    left: 15%;
+}
+
 .car-item:hover img {
-    transform: scale(1.05);
+    transform: translateY(-15%) scale(0.7); 
 }
 
 .car-item span {
@@ -119,6 +140,27 @@ footer {
     .header-logo {
         width: 40%;
         padding: 10px 0px;
+    }
+
+    
+    .tip {
+        display: none;
+    }
+
+    .car-item {
+        display: flex;
+        flex-flow: column-reverse;
+    }
+
+    .car-item:hover img {
+        transform: none;
+    }
+
+    .car-description {
+        position: relative;
+        bottom: unset;
+        left: unset;
+        padding-top: 8px;
     }
 
     footer {
