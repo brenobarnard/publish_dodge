@@ -1,0 +1,129 @@
+::selection { background-color: #E13300; color: white; }
+::-moz-selection { background-color: #E13300; color: white; }
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+    background-color: #191919;
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+}
+
+/* #region Header Section Styles */
+header {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px 30px 10px;
+}
+
+.header-logo {
+    width: 30%;
+    padding: 40px 0px;
+}
+
+.header-sub {
+    color: #ffffff;
+    font-weight: 100;
+    font-size: 1.5rem;
+}
+/* #endregion Header Section Styles */
+
+/* #region Cars View */
+
+.title {
+    padding: 0px 60px;
+    font-size: 2rem;
+}
+
+.title span {
+    padding-bottom: 10px;
+    color: #fff;
+    font-weight: 900;
+    text-transform: uppercase;
+    border-bottom: thin solid #fd3333;
+}
+
+.cars-container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: center;
+    flex: 1;
+    margin: 30px 0px;
+}
+
+.car-item {
+    display: flex;
+    flex-flow: column;
+    margin: 12px;
+}
+
+.car-item img {
+    position: relative;
+    width: 600px;
+    max-width: 80vw;
+    border-radius: 5px;
+    margin: 10px 0px;
+    transition: transform 0.3s;
+}
+
+.car-item:hover img {
+    transform: scale(1.05);
+}
+
+.car-item span {
+    color: #fff;
+}
+
+.car-item .car-model {
+    color: #fd3333;
+}
+
+/* #endregion Cars View */
+
+/* #region Footer Section */
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fd3333;
+    height: 80px;
+
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+/* #endregion Footer Section */
+
+@media screen and (max-width: 950px) {
+    header {
+        padding: 15px 0px;
+    }
+
+    .title {
+        padding: 0px;
+        text-align: center;
+        font-size: 1.4rem;
+    }
+
+    .header-sub {
+        display: none;
+    }
+
+    .header-logo {
+        width: 40%;
+        padding: 10px 0px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        height: 40px;
+        font-weight: 600;
+    }
+}
