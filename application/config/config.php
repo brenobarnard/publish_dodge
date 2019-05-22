@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://php-dodgeshowroom.apps.us-east-2.online-starter.openshift.com/';
+$config['base_url'] = 'http://dodgeshow-dodgeshow.apps.us-east-2.online-starter.openshift.com';
 
 /*
 |--------------------------------------------------------------------------
