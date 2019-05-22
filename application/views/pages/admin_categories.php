@@ -8,6 +8,16 @@
     </div>
   </div>
   <div class="cards-container">
-    <div class="error absolute">No categories available yet...:(</div>
+    <?php if(count($categories) == 0): ?>
+      <div class="error absolute">No categories available yet...:(</div>
+    <?php endif; ?>
+    <?php foreach ($categories as $category) : ?>
+      <div class="cc-card">
+        <span><?php echo $category['CATEGORY'] ?></span>
+        <span>
+          <a class="admin-icon-button" href="<?php echo '/index.php/admin_categories/delete_category/'.$category['ID']?>"><i class="icon ion-md-trash"></i></a>
+        </span>
+      </div>
+    <?php endforeach; ?>
   </div>
 </div>

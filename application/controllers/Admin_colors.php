@@ -23,6 +23,9 @@ class Admin_colors extends CI_Controller {
     $data['title'] = 'Showroom Admin Page';
     $data['styles'] = ['main.css', 'pages/admin.css', 'templates/footer.css'];
 
+    // Buscando cores no Banco de dados
+    $data['colors'] = $this->colors_model->get_colors();
+
     // Carregamento da view
     $this->load->view('templates/main_header', $data);
     $this->load->view('templates/admin_header', $data);
@@ -36,13 +39,14 @@ class Admin_colors extends CI_Controller {
     // Variáveis CORE
     $data['title'] = 'Add a Color';
     $data['styles'] = ['main.css', 'templates/forms.css', 'templates/footer.css'];
+    $data['error'] = '';
 
     /* Setando a variável $form_config da 
        view com isset pra evitar multiplos sets */
     if (!isset($data['form_config'])) {
       $configs = array (
         'title' => 'add new color',
-        'method' => '',
+        'method' => 'admin_colors/send',
         'submit_text' => 'add color',
         'back_page' => '/index.php/admin_colors',
         'input' => array(
@@ -75,7 +79,7 @@ class Admin_colors extends CI_Controller {
        view com isset pra evitar multiplos sets */
     if (!isset($data['form_config'])) {
       $configs = array (
-        'method' => '',
+        'method' => 'admin_colors/delete/'.$id,
         'submit_text' => 'delete color',
         'back_page' => '/index.php/admin_colors',
         'attributes' => 'class="form" id="formCrud"',
@@ -89,6 +93,51 @@ class Admin_colors extends CI_Controller {
     $this->load->view('templates/delete_message', $data);
     $this->load->view('templates/footer', $data);
     $this->load->view('templates/main_footer', $data);
+  }
+
+  public function send() {
+
+    // Validação do formulário
+    $form_valid = $this->form_validation->run('colors');
+
+    // Checando validação
+    if (!$form_valid) {
+      // Formulário Invalido
+      $this->add_color();
+    } else {
+      // Formulário Valido
+
+      // Trazendo valor do input
+      $color = array(
+        'name'=>$this->input->post('color')
+      );
+  
+      // Inserindo no Banco, retornando e conferindo resultado
+      $result = $this->colors_model->insert_color($color);
+  
+      if (!$result) {
+        // Falha na inserção
+        show_error('Color not added', '', 'Database Error');
+      }
+      else {
+        // Sucesso na inserção
+        redirect('admin_colors');
+      }
+    }
+  }
+
+  public function delete($id) {
+    
+    // Executando delete no Banco, retornando e conferindo resultado
+    $result = $this->colors_model->delete_color($id);
+
+    if(!$result) {
+      // Falha na exclusão
+      show_error('Color not deleted', '', 'Database Error');
+    } else {
+      // Sucesso na exclusão
+      redirect('admin_colors');
+    }
   }
 
 }

@@ -1,8 +1,14 @@
+<?php echo $error; ?>
 <a class="icon ion-md-arrow-back navigation-icon absolute-form" href="<?php echo $form_config['back_page'] ?>"></a>
 <div class="form-container">
   <div class="title">
     <span><?php echo $form_config['title'] ?></span>
   </div>
+  <?php if (validation_errors()): ?>
+  <div class="error">
+    <?php echo validation_errors(); ?>
+  </div>
+  <?php endif; ?>
   <?php
   echo form_open_multipart($form_config['method'], $form_config['attributes']);
   echo form_label($form_config['input']['label'], $form_config['input']['id']);

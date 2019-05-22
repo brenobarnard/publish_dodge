@@ -6,6 +6,9 @@ class Cars extends CI_Controller {
   {
     // Mantendo herança do CI_Controller
     parent::__construct();
+
+    // Carregamento de dependencias
+    $this->load->model('cars_model');
   }
 
   public function index() {
@@ -13,6 +16,9 @@ class Cars extends CI_Controller {
     // Variáveis CORE
     $data['title'] = 'Car Showroom';
     $data['styles'] = ['main.css', 'pages/cars.css', 'templates/footer.css'];
+        
+    // Buscando carros no Banco
+    $data['cars'] = $this->cars_model->get_cars();
 
     // Carregamento da view
     $this->load->view('templates/main_header', $data);

@@ -8,6 +8,16 @@
     </div>
   </div>
   <div class="cards-container">
-    <div class="error absolute">No colors available yet...:(</div>
+    <?php if(count($colors) == 0): ?>
+      <div class="error absolute">No colors available yet...:(</div>
+    <?php endif; ?>
+    <?php foreach ($colors as $color) : ?>
+      <div class="cc-card">
+        <span><?php echo $color['COLOR'] ?></span>
+        <span>
+          <a class="admin-icon-button" href="<?php echo '/index.php/admin_colors/delete_color/'.$color['ID']?>"><i class="icon ion-md-trash"></i></a>
+        </span>
+      </div>
+    <?php endforeach; ?>
   </div>
 </div>
