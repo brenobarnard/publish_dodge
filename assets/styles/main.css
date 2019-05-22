@@ -1,171 +1,153 @@
-::selection { background-color: #E13300; color: white; }
-::-moz-selection { background-color: #E13300; color: white; }
+::selection {
+	background-color: #e13300;
+	color: white;
+}
+::-moz-selection {
+	background-color: #e13300;
+	color: white;
+}
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Raleway', sans-serif;
-    background-color: #191919;
-    display: flex;
-    flex-flow: column;
-    min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	font-family: "Raleway", sans-serif;
+	background-color: #191919;
+	display: flex;
+	flex-flow: column;
+	height: 100vh;
 }
 
-/* #region Header Section Styles */
 header {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
-    padding: 0px 10px 30px 10px;
+	display: flex;
 }
 
-.header-logo {
-    width: 30%;
-    padding: 40px 0px;
+header.header {
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 10px 30px 10px;
 }
 
-.header-sub {
-    color: #ffffff;
-    font-weight: 100;
-    font-size: 1.5rem;
+.header .header-logo {
+	width: 30%;
+	padding: 40px 0px;
 }
-/* #endregion Header Section Styles */
 
-/* #region Cars View */
+.header .header-sub {
+	color: #ffffff;
+	font-weight: 100;
+	font-size: 1.5rem;
+}
 
 .title {
-    padding: 0px 60px;
-    font-size: 2rem;
+	padding: 20px 60px;
+	font-size: 2rem;
 }
 
 .title span {
-    padding-bottom: 10px;
-    color: #fff;
-    font-weight: 900;
-    text-transform: uppercase;
-    border-bottom: thin solid #fd3333;
+	padding-bottom: 10px;
+	color: #fff;
+	font-weight: 900;
+	text-transform: uppercase;
+	border-bottom: thin solid #fd3333;
+}
+
+.button-group {
+	display: flex;
+}
+
+.navigation-icon {
+	font-size: 3rem;
+	color: #ffffff;
+	cursor: pointer;
+	padding: 10px 15px;
+	transition: all 0.3s;
+}
+
+.navigation-icon.absolute {
+	font-size: 2rem;
+	position: absolute;
+	top: 15px;
+	right: 25px;
+}
+
+.navigation-icon.absolute-form {
+	font-size: 3rem;
+	position: absolute;
+	top: 15px;
+	left: 25px;
+}
+
+.navigation-icon:hover {
+	color: #fd3333;
 }
 
 .tip {
-    color: #191919;
-    background-color: #ADAFB2;
-    padding: 12px;
-    width: fit-content;
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 20px 60px 10px;
+	color: #191919;
+	background-color: #adafb2;
+	padding: 12px;
+	width: fit-content;
+	font-size: 1rem;
+	font-weight: 600;
+	margin: 10px 20px;
 }
 
 .tip i {
-    font-size: 1.4rem;
-    padding: 10px;
+	font-size: 1.4rem;
+	padding: 10px;
 }
 
-.cars-container {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: flex-start;
-    justify-content: center;
-    flex: 1;
-    margin: 30px 0px;
+div.error {
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #fd3333;
+  padding: 10px 20px;
 }
 
-.car-item {
-    position: relative;
-    margin: 12px;
+div.error.absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.car-item img {
-    position: relative;
-    width: 550px;
-    max-width: 80vw;
-
-    transition: transform 0.3s;
+div.error.inline {
+  background: none;
+  color: #fd3333;
 }
 
-.car-description {
-    display: flex;
-    flex-flow: column;
-    position: absolute;
-    bottom: 15px;
-    left: 15%;
-}
-
-.car-item:hover img {
-    transform: translateY(-15%) scale(0.7); 
-}
-
-.car-item span {
-    color: #fff;
-}
-
-.car-item .car-model {
-    color: #fd3333;
-}
-
-/* #endregion Cars View */
-
-/* #region Footer Section */
-
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fd3333;
-    height: 80px;
-
-    font-size: 1rem;
-    font-weight: 500;
-    color: #ffffff;
+div.error span{
+  display: block;
+  margin: 5px 0px;
+  color: #ffffff;
 }
 
 /* #endregion Footer Section */
 
 @media screen and (max-width: 950px) {
-    header {
-        padding: 15px 0px;
-    }
+	header.header {
+		padding: 15px 0px;
+	}
 
-    .title {
-        padding: 0px;
-        text-align: center;
-        font-size: 1.4rem;
-    }
+	.title {
+		padding: 0px;
+		text-align: center;
+		font-size: 1.4rem;
+	}
 
-    .header-sub {
-        display: none;
-    }
+	.header .header-sub {
+		display: none;
+	}
 
-    .header-logo {
-        width: 40%;
-        padding: 10px 0px;
-    }
+	.header .header-logo {
+		width: 40%;
+		padding: 10px 0px;
+	}
+	.tip {
+		display: none;
+	}
 
-    
-    .tip {
-        display: none;
-    }
-
-    .car-item {
-        display: flex;
-        flex-flow: column-reverse;
-    }
-
-    .car-item:hover img {
-        transform: none;
-    }
-
-    .car-description {
-        position: relative;
-        bottom: unset;
-        left: unset;
-        padding-top: 8px;
-    }
-
-    footer {
-        font-size: 0.8rem;
-        height: 40px;
-        font-weight: 600;
-    }
+	.navigation-icon {
+		display: none;
+	}
 }

@@ -1,0 +1,139 @@
+.admin-header {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-items: center;
+  padding: 20px 40px;
+}
+
+.admin-header .header-logo {
+  width: 275px;
+  padding: 0px 60px;
+}
+
+.admin-header .title {
+  margin-left: auto;
+}
+
+.admin-header .title span{
+  border-bottom: none;
+}
+
+.admin-container {
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+}
+
+.table-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  padding: 0px 60px;
+  font-weight: 900;
+  color: #ffffff;
+  background-color: #fd3333;
+  height: 80px;
+}
+
+.admin-button {
+  font-family: inherit;
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin: 0px 5px;
+  padding: 10px 30px;
+  border: none;
+  text-decoration: none;
+  transition: all 0.3s, outline 0s;
+}
+
+a.admin-button i {
+  padding: 0px 10px;
+}
+
+.admin-button.primary {
+  color: #191919;
+  background-color: #ffffff;
+}
+
+.admin-button.primary:hover {
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #fd3333;
+  border: thin solid #ffffff;
+}
+
+.admin-button.primary:focus {
+  outline: 2px solid #191919;
+}
+
+.admin-button.secondary {
+  color: #191919;
+  border: thin solid #191919;
+}
+
+.admin-button.secondary:hover {
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #fd3333;
+  border: thin solid #ffffff;
+}
+
+.admin-button.secondary:focus {
+  outline: 2px solid #ffffff;
+}
+
+.admin-icon-button {
+  font-size: 2rem;
+  padding: 5px 15px;
+  color: #fd3333;
+  transition: all 0.3s, outline 0s;
+}
+
+.admin-icon-button:hover {
+  color: #ffffff;
+  background: #fd3333;
+}
+
+.admin-icon-button:focus {
+  outline: 2px solid #ffffff;
+}
+
+.car-card {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #242424;
+  margin: 2px 0px;
+}
+
+.car-card img {
+  width: 150px;
+  padding: 10px 15px;
+}
+
+.car-card span {
+  flex: 1 1 0;
+  font-size: 1.3rem;
+  color: #ffffff;
+  padding: 10px 15px;  
+}
+
+.cc-card {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #242424;
+  margin: 2px 0px;
+}
+
+.cc-card span {
+  font-size: 1.8rem;
+  color: #ffffff;
+  padding: 10px 60px;
+  width: 150px;
+}
